@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/mvn'
-  args: ['mvn', 'clean', 'install', '-DskipTest']
+  args: ['mvn', 'clean', 'install', '-D', 'skipTest']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']
 

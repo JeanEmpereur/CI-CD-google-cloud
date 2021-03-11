@@ -4,7 +4,6 @@ steps:
 - name: maven:latest
   args: ['mvn', 'test']
 - name: node:latest
-  args: ['cd', 'jsproject']
   args: ['npm', 'install']
   args: ['npm', 'run', 'build']
 - name: 'gcr.io/cloud-builders/docker'

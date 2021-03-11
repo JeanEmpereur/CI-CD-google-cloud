@@ -4,6 +4,7 @@ steps:
 - name: maven:latest
   args: ['mvn', 'test']
 - name: node:latest
+  args: ['bash', '-c', 'cd jsproject']
   args: ['npm', 'run']
   args: ['npm', 'build']
   args: ['echo', 'hey', 'node']
@@ -16,3 +17,12 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
   args: ['-c', 'docker push jeanempe/java-ci-cd']
+  
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'cd jsproject']
+  args: ['-c', 'docker build -t jeanempe/js-ci-cd .']
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'cd jsproject']
+  args: ['-c', 'docker push jeanempe/js-ci-cd']

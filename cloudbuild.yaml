@@ -13,4 +13,5 @@ steps:
   args: ['-c', 'docker build -t jeanempe/java-ci-cd .']
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
+  args: ['-c', 'docker login --username=jeanempe --password=9dd3bc56-319a-40a2-8a4e-8e74136ab21e']
   args: ['-c', 'docker push jeanempe/java-ci-cd']

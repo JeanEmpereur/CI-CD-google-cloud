@@ -7,6 +7,6 @@ steps:
   args: ['npm', 'run']
   args: ['npm', 'build']
   args: ['echo', 'hey', 'node']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']
-
+- name: 'docker'
+  args: ['echo', 'hey', 'docker']
+  args: ['docker', 'login', '-u', 'jeanempe','-p','9dd3bc56-319a-40a2-8a4e-8e74136ab21e']

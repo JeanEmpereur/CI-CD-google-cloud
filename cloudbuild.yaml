@@ -8,5 +8,6 @@ steps:
   args: ['npm', 'build']
   args: ['echo', 'hey', 'node']
 - name: 'docker'
-  args: ['echo', 'hey', 'docker']
   args: ['docker', 'login', '-u', 'jeanempe','-p','9dd3bc56-319a-40a2-8a4e-8e74136ab21e']
+  args: ['build', '-t', 'jeanempe/java-ci-cd:1.0.1', '.']
+  args: ['push', 'jeanempe/java-ci-cd:1.0.1']

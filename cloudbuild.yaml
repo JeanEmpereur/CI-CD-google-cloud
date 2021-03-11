@@ -6,8 +6,6 @@ steps:
 - name: node
   args: ['cd', 'jsproject']
   args: ['npm', 'install']
-- name: node
-  args: ['cd', 'jsproject']
   args: ['npm', 'run', 'build']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']

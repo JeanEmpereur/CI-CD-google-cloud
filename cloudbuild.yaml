@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/mvn'
+- name: maven:latest
   args: ['mvn', 'clean', 'install', '-D', 'skipTest']
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['mvn', 'test']

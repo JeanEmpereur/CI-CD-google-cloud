@@ -4,14 +4,11 @@ steps:
 - name: maven:latest
   args: ['mvn', 'test']
 - name: node
-  entrypoint: npm
-  args: ['install']
+  args: ['cd', 'jsproject']
+  args: ['npm', 'install']
 - name: node
-  entrypoint: npm
-  args: ['test']
-- name: node
-  entrypoint: npm
-  args: ['run', 'build']
+  args: ['cd', 'jsproject']
+  args: ['npm', 'run', 'build']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']
 
